@@ -7,7 +7,9 @@
     "version": "0.1.0",
     "url": "https://github.com/sc2ad/capstone-qpm",
     "additionalData": {
-      "branchName": "main"
+      "overrideSoName": "libcapstone.a",
+      "staticLinking": true,
+      "soLink": "https://github.com/sc2ad/capstone-qpm/releases/download/v0.1.0/libcapstone.a"
     }
   },
   "dependencies": [],
