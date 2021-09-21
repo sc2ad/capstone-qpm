@@ -1,0 +1,15 @@
+{
+  "sharedDir": "shared",
+  "dependenciesDir": "extern",
+  "info": {
+    "name": "capstone",
+    "id": "capstone",
+    "version": "0.1.0",
+    "url": "https://github.com/sc2ad/capstone-qpm",
+    "additionalData": {
+      "branchName": "main"
+    }
+  },
+  "dependencies": [],
+  "additionalData": {}
+}

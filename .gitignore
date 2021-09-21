@@ -1,0 +1,9 @@
+*.a
+*.so.*
+
+libs/
+obj/
+
+extern/
+qpm.shared.json
+*.backup
