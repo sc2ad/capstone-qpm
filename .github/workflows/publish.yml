@@ -1,0 +1,25 @@
+name: Publish QPM Package
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: Fernthedev/qpm-action@v2
+        with:
+          publish: late
+          publish_token: ${{ secrets.QPM_KEY }}
+      - name: Build QPKG
+        run: qpm2 qpkg
+      - name: Verify packaged static archive
+        run: |
+          python3 -c "from pathlib import Path; from zipfile import ZipFile; assert ZipFile('capstone.qpkg').read('bin/libcapstone.a') == Path('libcapstone.a').read_bytes()"
